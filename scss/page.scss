@@ -1,0 +1,51 @@
+// scss/page.scss - File SCSS thứ hai độc lập minh họa biên dịch nhiều file theo thư mục
+@use "variables" as vars;
+@use "mixins";
+
+.documentation-view {
+  background: vars.$light;
+  border-radius: vars.$radius-lg;
+  padding: 32px;
+  box-shadow: vars.$shadow-md;
+  margin-top: 32px;
+  border: 1px solid vars.$border-color;
+
+  &__heading {
+    color: vars.$dark;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    border-bottom: 2px solid vars.$primary;
+    padding-bottom: 8px;
+  }
+
+  &__content {
+    font-size: 1rem;
+    color: vars.$text-main;
+    line-height: 1.7;
+
+    ul {
+      margin-left: 20px;
+      margin-top: 12px;
+      margin-bottom: 16px;
+
+      li {
+        margin-bottom: 8px;
+        color: vars.$text-muted;
+      }
+    }
+  }
+
+  .alert-box {
+    background: #ecfdf5;
+    border-left: 4px solid vars.$success;
+    padding: 16px 20px;
+    border-radius: vars.$radius-sm;
+    margin-top: 20px;
+
+    p {
+      color: #065f46;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+}

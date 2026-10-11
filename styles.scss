@@ -1,0 +1,153 @@
+// styles.scss - File SCSS đơn lẻ kiểm thử biên dịch SASS CLI (Mục 6 & 7)
+
+// 1. Biến SASS (Variables)
+$primary-color: #4f46e5;
+$secondary-color: #06b6d4;
+$success-color: #10b981;
+$dark-color: #0f172a;
+$light-color: #ffffff;
+$bg-color: #f8fafc;
+$text-color: #334155;
+$font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$border-radius: 12px;
+$box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+// 2. Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style($bg, $color: $light-color) {
+  background: $bg;
+  color: $color;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.08);
+  }
+}
+
+// 3. Quy tắc chung
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $bg-color;
+  color: $text-color;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+// 4. Header & Banner
+.header {
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  color: $light-color;
+  padding: 40px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  margin-bottom: 30px;
+  text-align: center;
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+
+  p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+// 5. Grid các bước thực hành
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 30px;
+
+  .step-card {
+    background: $light-color;
+    padding: 24px;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(79, 70, 229, 0.1);
+      color: $primary-color;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      color: $dark-color;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #64748b;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .code-snippet {
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+    }
+  }
+}
+
+// 6. Nút bấm hành động
+.actions {
+  text-align: center;
+  margin-top: 20px;
+
+  .btn-primary {
+    @include button-style($primary-color);
+    margin-right: 12px;
+  }
+
+  .btn-secondary {
+    @include button-style($secondary-color);
+  }
+}

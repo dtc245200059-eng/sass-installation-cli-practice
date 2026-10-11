@@ -1,0 +1,29 @@
+{
+  "name": "sass-installation-cli-practice",
+  "version": "1.0.0",
+  "description": "[Thực Hành] Hướng dẫn cài đặt SASS bằng npm & SASS CLI",
+  "main": "index.html",
+  "scripts": {
+    "sass:version": "sass --version",
+    "sass:single": "sass styles.scss styles.css",
+    "sass:single-watch": "sass styles.scss styles.css --watch",
+    "sass:multi": "sass scss/:css/",
+    "sass:multi-watch": "sass scss/:css/ --watch",
+    "build": "npm run sass:single && npm run sass:multi"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "cli",
+    "npm",
+    "dart-sass",
+    "compiler",
+    "watch-mode"
+  ],
+  "author": "dtc245200059-eng",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.105.1"
+  }
+}

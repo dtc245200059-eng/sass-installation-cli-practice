@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Thực Hành] Hướng dẫn cài đặt SASS bằng npm & SASS CLI</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Liên kết đến các file CSS được biên dịch từ SCSS bằng SASS CLI -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+
+  <div class="layout-container">
+    
+    <!-- Hero Banner (Biên dịch từ scss/_components.scss) -->
+    <header class="hero-banner">
+      <span class="info-badge info-badge--primary" style="margin-bottom: 12px; background: rgba(255,255,255,0.2); color: #ffffff;">
+        CodeGym Frontend Practice
+      </span>
+      <h1>[Thực Hành] Cài Đặt SASS Bằng npm & SASS CLI</h1>
+      <p>
+        Báo cáo kết quả và hướng dẫn thực hành kiểm tra môi trường Node.js, cài đặt Dart SASS qua npm/CLI, 
+        và thực hiện biên dịch SCSS sang CSS đơn tệp & đa thư mục với SASS Compiler.
+      </p>
+    </header>
+
+    <!-- Tóm tắt trạng thái môi trường thực tế trên hệ thống -->
+    <div style="background: #ffffff; padding: 20px 24px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: center;">
+      <div>
+        <span style="font-size: 13px; color: #64748b; font-weight: 600;">Node.js Environment:</span>
+        <div style="font-size: 18px; font-weight: 800; color: #10b981;">v24.19.0 (Active)</div>
+      </div>
+      <div>
+        <span style="font-size: 13px; color: #64748b; font-weight: 600;">npm Package Manager:</span>
+        <div style="font-size: 18px; font-weight: 800; color: #06b6d4;">v11.17.0 (Active)</div>
+      </div>
+      <div>
+        <span style="font-size: 13px; color: #64748b; font-weight: 600;">Dart SASS Compiler:</span>
+        <div style="font-size: 18px; font-weight: 800; color: #4f46e5;">v1.105.1 (Active)</div>
+      </div>
+      <div>
+        <span class="info-badge info-badge--success">100% SẴN SÀNG</span>
+      </div>
+    </div>
+
+    <!-- Lưới 9 nội dung thực hành -->
+    <div class="grid-showcase">
+
+      <!-- Mục 1 & 2 & 3: Kiểm tra & Cài đặt Node.js / npm -->
+      <div class="feature-card">
+        <div class="feature-header">
+          <span class="info-badge info-badge--success">Bước 1, 2 & 3</span>
+          <span style="font-size: 20px;">🟢</span>
+        </div>
+        <h3>Kiểm tra & Cài đặt Node.js / npm</h3>
+        <p>Kiểm tra sự hiện diện của Node.js và npm trên máy tính trước khi tiến hành cài đặt SASS.</p>
+        <div class="terminal-box">
+          <div class="terminal-box__header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title">bash / powershell</div>
+          </div>
+          <div class="terminal-box__body">
+            <span class="comment"># Kiểm tra phiên bản Node.js</span><br>
+            <span class="command">node -v</span><br>
+            <span class="output">&gt; v24.19.0</span><br><br>
+            <span class="comment"># Kiểm tra phiên bản npm</span><br>
+            <span class="command">npm -v</span><br>
+            <span class="output">&gt; 11.17.0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mục 4: Cài đặt SASS bằng npm -->
+      <div class="feature-card">
+        <div class="feature-header">
+          <span class="info-badge info-badge--primary">Bước 4</span>
+          <span style="font-size: 20px;">📦</span>
+        </div>
+        <h3>Cài đặt SASS Toàn Cục bằng npm</h3>
+        <p>Sử dụng npm với cờ <code>-g</code> để cài đặt SASS ở phạm vi toàn hệ thống.</p>
+        <div class="terminal-box">
+          <div class="terminal-box__header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title">terminal</div>
+          </div>
+          <div class="terminal-box__body">
+            <span class="comment"># Cài đặt global package</span><br>
+            <span class="command">npm install -g sass</span><br><br>
+            <span class="comment"># Xác nhận phiên bản</span><br>
+            <span class="command">sass --version</span><br>
+            <span class="output">&gt; 1.105.1 compiled with dart2js 3.13.5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mục 5: Cài đặt SASS CLI độc lập -->
+      <div class="feature-card">
+        <div class="feature-header">
+          <span class="info-badge info-badge--primary">Bước 5</span>
+          <span style="font-size: 20px;">⚡</span>
+        </div>
+        <h3>Cài đặt SASS CLI Không Cần npm</h3>
+        <p>Tải trực tiếp bản phát hành độc lập từ GitHub Releases và thêm vào biến môi trường PATH.</p>
+        <div class="terminal-box">
+          <div class="terminal-box__header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title">releases info</div>
+          </div>
+          <div class="terminal-box__body">
+            <span class="comment"># Nguồn tải trực tiếp:</span><br>
+            <span class="output">github.com/sass/dart-sass/releases</span><br><br>
+            <span class="comment"># Giải nén & thêm vào PATH:</span><br>
+            <span class="output">C:\Program Files\SASS\sass.bat</span><br>
+            <span class="command">sass --version</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mục 6: Chuyển đổi tệp đơn lẻ -->
+      <div class="feature-card">
+        <div class="feature-header">
+          <span class="info-badge info-badge--success">Bước 6</span>
+          <span style="font-size: 20px;">📄</span>
+        </div>
+        <h3>Biên dịch SCSS sang CSS Đơn Tệp</h3>
+        <p>Chuyển đổi file SCSS chỉ định thành CSS sẵn sàng sử dụng trên website.</p>
+        <div class="terminal-box">
+          <div class="terminal-box__header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title">sass cli</div>
+          </div>
+          <div class="terminal-box__body">
+            <span class="comment"># Cú pháp biên dịch 1 file:</span><br>
+            <span class="command">sass styles.scss styles.css</span><br><br>
+            <span class="comment"># Đã tạo thành công:</span><br>
+            <span class="output">✓ styles.css (2.7 KB)</span><br>
+            <span class="output">✓ styles.css.map</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mục 7: Chế độ theo dõi (Watch Mode) -->
+      <div class="feature-card">
+        <div class="feature-header">
+          <span class="info-badge info-badge--primary">Bước 7</span>
+          <span style="font-size: 20px;">👁️</span>
+        </div>
+        <h3>Kích hoạt Chế độ Theo dõi (Watch)</h3>
+        <p>Tự động phát hiện thay đổi trong mã SCSS và tức thì biên dịch lại CSS.</p>
+        <div class="terminal-box">
+          <div class="terminal-box__header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title">watch mode</div>
+          </div>
+          <div class="terminal-box__body">
+            <span class="comment"># Cú pháp theo dõi tự động:</span><br>
+            <span class="command">sass styles.scss styles.css --watch</span><br><br>
+            <span class="output">Sass is watching for changes. Press Ctrl-C to stop.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mục 8: Biên dịch nhiều tệp thư mục scss/:css/ -->
+      <div class="feature-card">
+        <div class="feature-header">
+          <span class="info-badge info-badge--success">Bước 8</span>
+          <span style="font-size: 20px;">📁</span>
+        </div>
+        <h3>Biên dịch Nhiều Tệp Theo Thư Mục</h3>
+        <p>Ánh xạ toàn bộ thư mục đầu vào <code>scss/</code> sang thư mục đầu ra <code>css/</code>.</p>
+        <div class="terminal-box">
+          <div class="terminal-box__header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title">multi-file compile</div>
+          </div>
+          <div class="terminal-box__body">
+            <span class="comment"># Biên dịch toàn bộ folder:</span><br>
+            <span class="command">sass scss/:css/</span><br><br>
+            <span class="comment"># Hoặc kết hợp watch:</span><br>
+            <span class="command">sass scss/:css/ --watch</span><br>
+            <span class="output">✓ scss/main.scss -&gt; css/main.css</span><br>
+            <span class="output">✓ scss/page.scss -&gt; css/page.css</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Khối tài liệu minh họa (Biên dịch từ scss/page.scss) -->
+    <div class="documentation-view">
+      <h2 class="documentation-view__heading">Xử lý Lỗi "Set-ExecutionPolicy" trên Windows (Mục 9)</h2>
+      <div class="documentation-view__content">
+        <p>
+          Khi chạy lệnh npm hoặc sass trên Windows PowerShell và gặp thông báo chặn kịch bản thực thi:
+          <code>cannot be loaded because running scripts is disabled on this system</code>.
+        </p>
+        <div class="terminal-box" style="margin-top: 12px; margin-bottom: 16px;">
+          <div class="terminal-box__header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title">powershell (run as administrator)</div>
+          </div>
+          <div class="terminal-box__body">
+            <span class="comment"># Mở PowerShell với quyền Quản trị (Admin) và chạy:</span><br>
+            <span class="command">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</span><br>
+            <span class="comment"># Hoặc:</span><br>
+            <span class="command">Set-ExecutionPolicy Unrestricted</span>
+          </div>
+        </div>
+        <div class="alert-box">
+          <p>✔ Lệnh này cấp quyền chạy script hợp lệ trên hệ thống Windows, giúp các lệnh SASS CLI hoạt động trơn tru.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 40px; color: #94a3b8; font-size: 14px;">
+      <p>Thực hiện bởi: <strong>dtc245200059-eng</strong> | Bài thực hành Cài đặt SASS bằng npm & SASS CLI</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
